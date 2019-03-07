@@ -131,6 +131,13 @@ class Kaleidoscope_ {
     return millis_at_cycle_start_;
   }
 
+  /** Sets the timer to the specified value.
+   * Should only be used in very special circumstances.
+   */
+  static void setMillisAtCycleStart(uint32_t millis) {
+    millis_at_cycle_start_ = millis;
+  }
+
   EventHandlerResult onFocusEvent(const char *command) {
     return kaleidoscope::Hooks::onFocusEvent(command);
   }
