@@ -30,6 +30,10 @@ union Key;
 class kaleidoscope_;
 extern void handleKeyswitchEvent(kaleidoscope::Key mappedKey, byte row, byte col, uint8_t keyState);
 
+namespace custom {
+  class IQueue;
+}
+
 namespace kaleidoscope {
 
 // Forward declaration to enable friend declarations.
@@ -57,6 +61,8 @@ class Hooks {
   // ::handleKeyswitchEvent(...) calls Hooks::onKeyswitchEvent.
   friend void ::handleKeyswitchEvent(kaleidoscope::Key mappedKey,
                                      byte row, byte col, uint8_t keyState);
+
+  friend class ::custom::IQueue;
 
  private:
 
